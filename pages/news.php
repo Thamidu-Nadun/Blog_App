@@ -13,19 +13,36 @@
                         </div>
                     </div>
                     <?php
-                    $statement = $pdo->prepare("SELECT page.id, title, description, author,image_path, date, category, views, comment, category.name FROM page, category WHERE page.category=category.id ORDER BY page.id DESC LIMIT 2");
+                    $statement = $pdo->prepare("
+                    SELECT 
+                        page.id, 
+                        page.title, 
+                        page.description, 
+                        page.author, 
+                        page.image_path, 
+                        page.views, 
+                        page.date, 
+                        category.name AS category_name,
+                        COUNT(comment.id) AS comment_count
+                    FROM page
+                    INNER JOIN category ON page.category = category.id
+                    LEFT JOIN comment ON page.id = comment.page_id
+                    GROUP BY page.id, page.title, page.description, page.author, page.image_path, page.views, page.date, category.name
+                    ORDER BY page.id DESC
+                    LIMIT 2
+                ");
                     $statement->execute();
                     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as $row) {
                         $id = $row['id'];
                         $title = $row['title'];
                         $date = $row['date'];
-                        $category = $row['name'];
+                        $category = $row['category_name'];
                         $description = $row['description'];
                         $author = $row['author'];
                         $image_path = $row['image_path'];
                         $views = $row['views'];
-                        $comments = $row['comment'];
+                        $comments = $row['comment_count'];
                         ?>
                         <div class="col-lg-6">
                             <div class="position-relative mb-3">

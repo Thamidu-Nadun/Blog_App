@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nad-soft Blog</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="theme-color" content="#e83e8c">
+    <meta content="blog,hacking news,nad-soft,nad soft" name="keywords" />
+    <meta content="We talk about latest hacking news and technologies." name="description" />
+
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Topbar Start -->
+    <div class="container-fluid d-none d-lg-block">
+      <div class="row align-items-center bg-dark px-lg-5">
+        <div class="col-lg-9">
+          <nav class="navbar navbar-expand-sm bg-dark p-0">
+            <ul class="navbar-nav ml-n2">
+              <li class="nav-item border-right border-secondary">
+                <a class="nav-link text-body small" href="#"
+                  id="nowDate">
+                </a>
+              </li>
+              <li class="nav-item border-right border-secondary">
+                <a class="nav-link text-body small" href="#">Advertise</a>
+              </li>
+              <li class="nav-item border-right border-secondary">
+                <a class="nav-link text-body small" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body small" href="#">Login</a>
+              </li>
+            </ul>
+            <span id="time" style="color:#fff;position:relative;left:20vw;"></span>
+          </nav>
+        </div>
+        <div class="col-lg-3 text-right d-none d-md-block">
+          <nav class="navbar navbar-expand-sm bg-dark p-0">
+            <ul class="navbar-nav ml-auto mr-n2">
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-twitter"></small
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-facebook-f"></small
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-linkedin-in"></small
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-instagram"></small
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-google-plus-g"></small
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-body" href="#"
+                  ><small class="fab fa-youtube"></small
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row align-items-center bg-white py-3 px-lg-5">
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
+            <h1 class="m-0 display-4 text-uppercase text-primary">
+              NAD<span class="text-secondary font-weight-normal">Soft</span>
+            </h1>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+      <nav
+        class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5"
+      >
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+          <h1 class="m-0 display-4 text-uppercase text-primary">
+            Nad<span class="text-white font-weight-normal">Soft</span>
+          </h1>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between px-0 px-lg-3"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav mr-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="category.html" class="nav-item nav-link">Category</a>
+            <a href="single.html" class="nav-item nav-link">Single News</a>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Catagory</a
+              >
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="#" class="dropdown-item">Cyber Security</a>
+                <a href="#" class="dropdown-item">programming</a>
+                <a href="#" class="dropdown-item">Artifial Intelligence</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+          <div
+            class="input-group ml-auto d-none d-lg-flex"
+            style="width: 100%; max-width: 300px"
+          >
+            <input
+              type="text"
+              class="form-control border-0"
+              placeholder="Keyword"
+              id="searchInput"
+            />
+            <div class="input-group-append">
+              <button
+                class="input-group-text bg-primary text-dark border-0 px-3"
+                id="search-btn"
+              >
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+            <ul id="blogList"></ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid mt-5 pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Contact Us!</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-4 mb-3">
+                        <div class="mb-4">
+							<div class="mb-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fa fa-map-marker-alt text-primary mr-2"></i>
+                                    <h6 class="font-weight-bold mb-0">Place</h6>
+                                </div>
+                                <p class="m-0">Nad Tech, sri lanka</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fa fa-envelope-open text-primary mr-2"></i>
+                                    <h6 class="font-weight-bold mb-0">Email</h6>
+                                </div>
+                                <p class="m-0">nadsoft@info.com</p>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                    <h6 class="font-weight-bold mb-0">Call Us</h6>
+                                </div>
+                                <p class="m-0">+9412345678</p>
+                            </div>
+                        </div>
+                        <h6 class="text-uppercase font-weight-bold mb-3">Contact Us</h6>
+                        <form method="post">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control p-4" placeholder="Your Name" required="required"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control p-4" placeholder="Your Email" required="required"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control p-4" placeholder="Subject" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Message" required="required"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;"
+                                    type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Social Follow Start -->
+                    <div class="mb-3">
+                        <div class="section-title mb-0">
+                          <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                          <br>
+                          <a
+                            href=""
+                            class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #52aaf4"
+                          >
+                            <i
+                              class="fab fa-twitter text-center py-4 mr-3"
+                              style="width: 65px; background: rgba(0, 0, 0, 0.2)"
+                            ></i>
+                            <span class="font-weight-medium">@slnadyc</span>
+                          </a>
+                          <a
+                            href=""
+                            class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #0185ae"
+                          >
+                            <i
+                              class="fab fa-linkedin-in text-center py-4 mr-3"
+                              style="width: 65px; background: rgba(0, 0, 0, 0.2)"
+                            ></i>
+                            <span class="font-weight-medium">Sl Nad Yc</span>
+                          </a>
+                          <a
+                            href=""
+                            class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #dc472e"
+                          >
+                            <i
+                              class="fab fa-youtube text-center py-4 mr-3"
+                              style="width: 65px; background: rgba(0, 0, 0, 0.2)"
+                            ></i>
+                            <span class="font-weight-medium">@slnadyc</span>
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Social Follow End -->
+
+                    <!-- Newsletter Start -->
+            <div class="mb-3">
+                <div class="section-title mb-0">
+                  <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                </div>
+                <div class="bg-white text-center border border-top-0 p-3">
+                  <p>
+                    Aliqu justo et labore at eirmod justo sea erat diam dolor diam
+                    vero kasd
+                  </p>
+                  <div class="input-group mb-2" style="width: 100%">
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      placeholder="Your Email"
+                    />
+                    <div class="input-group-append">
+                      <button class="btn btn-primary font-weight-bold px-3">
+                        Sign Up
+                      </button>
+                    </div>
+                  </div>
+                  <small>Lorem ipsum dolor sit amet elit</small>
+                </div>
+              </div>
+              <!-- Newsletter End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
+        <div class="row py-4">
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">
+              Get In Touch
+            </h5>
+            <p class="font-weight-medium">
+              <i class="fa fa-map-marker-alt mr-2"></i><a href="https://www.google.com/maps/place/Nad+Tech/">Nad Soft</a>
+            </p>
+            <p class="font-weight-medium">
+              <i class="fa fa-phone-alt mr-2"></i><a href="callto:+94123456789">+94123456789</a>
+            </p>
+            <p class="font-weight-medium">
+              <i class="fa fa-envelope mr-2"></i><a href="mailto:nadsoft.lifting476@passfwd.com">nadsoft@info.com</a>
+            </p>
+            <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">
+              Follow Us
+            </h6>
+            <div class="d-flex justify-content-start">
+              <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a class="btn btn-lg btn-secondary btn-lg-square" href="#"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">
+              Popular News
+            </h5>
+            <div class="mb-3">
+              <div class="mb-2">
+                <a
+                  class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                  href=""
+                  >Business</a
+                >
+                <a class="text-body" href=""><small>Sep 02, 2023</small></a>
+              </div>
+              <a class="small text-body text-uppercase font-weight-medium" href=""
+                >THE BEST FPS GAMES ON ANDROID IN 2023: POPULAR BY DEMAND...</a
+              >
+            </div>
+            <div class="mb-3">
+              <div class="mb-2">
+                <a
+                  class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                  href=""
+                  >Business</a
+                >
+                <a class="text-body" href=""><small>Sep 02, 2023</small></a>
+              </div>
+              <a class="small text-body text-uppercase font-weight-medium" href=""
+                >PROTONMAIL CODE VULNERABILITIES LEAKED EMAILS...</a
+              >
+            </div>
+            <div class="">
+              <div class="mb-2">
+                <a
+                  class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                  href=""
+                  >Business</a
+                >
+                <a class="text-body" href=""><small>Sep 02, 2023</small></a>
+              </div>
+              <a class="small text-body text-uppercase font-weight-medium" href=""
+                >TIKTOK OPENS DUBLIN DATA CENTRE TO EASE CHINA SPYING FEARS</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">
+              Categories
+            </h5>
+            <div class="m-n1">
+              <a href="" class="btn btn-sm btn-secondary m-1">Cyber</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Hacking</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Tech</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Gaming</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">AI</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">API</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Python</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Programming</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Mobile Phone</a>
+              <a href="" class="btn btn-sm btn-secondary m-1">Malware</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold" style="text-align:center;">
+              &lt;🔥🔥/&gt;
+            </h5>
+            <div class="row">
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="https://avatar.cdnpk.net/23.jpg" alt=""
+                /></a>
+              </div>
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="https://qph.cf2.quoracdn.net/main-qimg-199b6a3ad419b1b7faffa5b8ad122097-lq" alt=""
+                /></a>
+              </div>
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="https://www.web-hosting.net.my/skins/serverfreak/img/iconf/git.png" alt=""
+                /></a>
+              </div>
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAABuCAMAAADxhdbJAAAAkFBMVEW4AAD////KU1PrxMT79vW5AAD//v/gmZm1EhLUiorNZGTv1dW5CQn49vbx0NHGR0XKYGDltLO7ExPVfHzAKir57Ou0AALz3NzhmZnpvr+9ICDYion05ubbkZHDNDXimZngoaDjrK3tx8fSennTdHPZhoLTbGngpKPANTbEQUC+JCTHTU7OW1vjsK/16Oi3KSniHtBaAAADkUlEQVRoge2X25aiOhBAKxiCLZE7oQW1vbUjYjv//3dTFVoass6ZNUKveZnsB1cskG2SSiUAWCwWi8VisVgsFovFYvlDto5BCaAyM5jhnaUZ3I7QvXGDCIOVGawwGJnBzdMyF16ZwQLDL2bwBYMLM+i5z/fOm6B73tbq4qqqNgcx1MXVy8smXpq6tZemu/UUnYhAKVDH5UCHDYxGfKATrxLDEIlJuqRgRZn4Yqg7sPtVHQa6D5Uc1/nKm6zjWVkMdWQKhzruqNPkuRORPL07ciOMwTy/R5Au+7qinB++QQcyURCuDZ2UCrZFTyf8pPS/QYeDKRZQDXU0jj/g1O/d+iL3OmMm61gFZ1MnWKCiQaqcoaZUzaelilycFomKjcGMTosrbAY6P4PyFtUOn7LMjxkS7ofLPKVgvRuuO1acsvK69SbpeI60ReVL1w/2i1heFHxkqvz1Ev02Qfe8DU4zgwaDZzN4xmBjBk8jdCbqz6+pEYNp8g2PsPwl5Hwu29Z8Plf68xMJCX7qS58TqubtzbK+3cLyd0n1P7hu6vtxqdt7378A+B0OVL4/I18ZRTd8uNvg9y3I8yHnS17E9YjevXbrNcC9G2DZW+83rGR4oHXPQnDS4gYVSOnRLVN2hPzW0wl2iDUhZFgbqQu7z2KzZ2yvN6BVeqw+8tEl2k/6ugbH2KXpol3wiFOFV3CfBVjTfpfi/9GznYTjdJy21i+daLqLH4y9AdQ5bTyYKTgONe5/YjYiS750eEjl217vnISgHuDkBQlETPxgTIJDU6cPE/uLHK9LI/2crndtpuzwYsZFnuHUFegN3UoP6TXXm+GHM8pIOrmj4Tw8etcmHukkHrtCeWDenG5YMRbhlF5n7f9Zj3nhIh1cOWZ8N5h7j6AXL8rJtL6zCArmqzu7X1xa89tUnwaLEVOodXDEdPO7zNSJqStJiL1cMK7gnbGf/Ry54u/EiNRsdbI9rD4WQkeZM3+Gpz+F3liI3gtk4tOqGKmDS/6luyVdaqoV45xVLsglzaeDoeZG1VI197YEPMlrq2tP0K0uWGk2NHJHClPRWVGDKlkqfO899dbj5u7tU0eDg8ne1kydnSt6GtWxPHPbg1FAke4NKG9+/+T/JA2ChW40QeDXLgQdO3q4jINgQ8OaBfpGF5MkyDnPi/2YGoZvOVI9Wkn7/cHjetd4/KR2nLAcI7NYLBaLxWKxWCwWi+Wf5RcCET6K0TMIGwAAAABJRU5ErkJggg==" alt=""
+                /></a>
+              </div>
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="data:image/jpeg;base64,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" alt=""
+                /></a>
+              </div>
+              <div class="col-4 mb-3">
+                <a href=""
+                  ><img class="w-100" src="data:image/jpeg;base64,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" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container-fluid py-4 px-sm-3 px-md-5"
+        style="background: #111111"
+      >
+        <p class="m-0 text-center">
+          &copy; <a href="#">nad-soft</a>. All Rights Reserved.
+  
+          Design by <a href="https://htmlcodex.com">@slnadyc</a>
+        </p>
+      </div>
+      <!-- Footer End -->
+  
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-primary btn-square back-to-top"
+        ><i class="fa fa-arrow-up"></i
+      ></a>
+  
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <script src="js/date.js"></script>
+      <script src="js/news.js"></script>
+      <script src="js/slideAd.js"></script>
+      <script src="js/smallad.js"></script>
+      <!--script src="js/search.js"></!--script-->
+  
+      <!-- Template Javascript -->
+      <script src="js/main.js"></script>
+    </body>
+  </html>
+  

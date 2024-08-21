@@ -1,0 +1,33 @@
+:root{
+    --color: #1591ca;
+    --success: #3dca15;
+    --warning: #f6da06;
+    --error : #e02f03;
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: var(--color);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    animation: toastPush 5s ease-in-out linear;
+  }
+  @keyframes toastPush {
+    to {
+      bottom: 1.5rem;
+      opacity: 1;
+    }
+  }

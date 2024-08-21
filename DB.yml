@@ -1,0 +1,45 @@
+Entity:
+    - Page
+    - Category
+    - Admin
+    - User
+Attributes:
+    - Page
+        - id
+        - title
+        - Content
+        - Date
+    - Category
+        - id
+        - name
+    - Admin
+        - id
+        - mail
+    - User
+        - null
+
+Normalized:
+    - page(id, title, content, date)
+    - category(id,name)
+    - admin(id,mail)
+    - comment(id,content)
+    - comment_user(id,comment_id, date)
+    - user()
+
+    - page(id, title, content, date):
+        - 01,"Hello", "Lorem ipsum dolor sit", "2024-01-27"
+        - 02,"Design", "Lorem ipsum dolor sit", "2024-02-17"
+        - 03,"Mobile", "Lorem ipsum dolor sit", "2024-03-07"
+    - category(id,name):
+        - 01, "Tech"
+        - 02, "Design"
+    - admin(id,mail):
+        - 01, "admin@mail.com"
+    - comment(id,content):
+        - 01, "this is a comment."
+        - 02, "this is a comment_2."
+    - comment_user(user_id, comment_id, date):
+        - 005, 01, 2023-01-27
+
+setting:
+    - id, title, meta_keyword, meta_description, favicon,
